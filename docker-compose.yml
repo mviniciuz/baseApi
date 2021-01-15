@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+
+    rcauni:
+      build:
+       context: .
+       dockerfile: ./Dockerfile
+
+      environment:         
+        - PORT_EXPRESS=3333
+        - DB_HOST=falta por
+        - DB_USER=agenda
+        - DB_PASS=@agenda2014
+        - DB_NAME=agenda
+
+      container_name: agenda-api
+
+      volumes:
+        - agenda-data:/data
+
+      ports:
+        - '3333:3333' 
+
+
+volumes:
+  rcauni-data:
+
+networks:
+  default:
+    external:
+      name: agendanetwork  
+
+  
+      
+  
+  
